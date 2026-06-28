@@ -143,7 +143,7 @@ figura(
     "oficial_inei_esquema.png", "1",
     "Esquema conceptual de la informalidad laboral (sector y empleo)",
     "Tomado del Instituto Nacional de Estadística e Informática (INEI, 2019).",
-    width=4.6)
+    width=4.0)
 
 para(
     "El estudio sistemático de la informalidad se remonta a la noción de «sector "
@@ -177,7 +177,7 @@ figura(
     "oficial_ilostat_mundial_2004_2022.png", "2",
     "Tasa de empleo informal en el mundo, 2004-2022 (%)",
     "Tomado de ILOSTAT, Organización Internacional del Trabajo (OIT, 2023).",
-    width=5.6)
+    width=5.2)
 
 # --- América Latina ---
 para(
@@ -189,8 +189,8 @@ para(
     "perpetuando trampas de pobreza y vulnerabilidad (Comisión Económica para América "
     "Latina y el Caribe [CEPAL], 2023). La evidencia regional muestra de manera "
     "consistente que la probabilidad de ser informal aumenta con el menor nivel "
-    "educativo, en las mujeres —en especial cuando existen dependientes en el hogar—, "
-    "en los jóvenes y los adultos mayores, en las zonas rurales y entre los trabajadores "
+    "educativo, en las mujeres, en los jóvenes y los adultos mayores, en las zonas "
+    "rurales y entre los trabajadores "
     "de microempresas (CEPAL, 2023). Dentro de este panorama, el Perú figura "
     "sistemáticamente entre los países con mayores tasas de informalidad de la región, "
     "lo que confiere especial relevancia al análisis de sus determinantes.")
@@ -211,7 +211,7 @@ figura(
     "Perú: PEA ocupada por condición de empleo formal e informal, 2024",
     "Tomado del Instituto Nacional de Estadística e Informática (INEI, 2025), "
     "Encuesta Permanente de Empleo Nacional.",
-    width=4.8)
+    width=4.3)
 
 para(
     "La trayectoria histórica del indicador revela una notable rigidez estructural: la "
@@ -233,16 +233,14 @@ para(
     "Las consecuencias de la informalidad se proyectan tanto sobre los trabajadores "
     "como sobre el conjunto de la economía. En el plano individual, los trabajadores "
     "informales carecen de protección social, enfrentan mayor inestabilidad de ingresos "
-    "y disponen de escasas oportunidades de capacitación y de acceso al crédito formal. "
-    "En el plano agregado, la informalidad erosiona la base tributaria del Estado y "
-    "deprime la productividad media, pues las unidades informales permanecen pequeñas y "
-    "descapitalizadas (Loayza, 2008; Ulyssea, 2020). La comparación internacional es "
-    "ilustrativa: en economías de mayor formalidad, como Chile, la productividad por "
-    "trabajador casi duplica la peruana, en parte porque la formalidad facilita el "
-    "acceso a financiamiento, tecnología y capacitación. Ante la falta de empleo formal, "
-    "amplios segmentos de la población económicamente activa recurren a ocupaciones "
-    "eventuales de subsistencia —los denominados «cachuelos»—, que rara vez ofrecen "
-    "estabilidad ni posibilidades de desarrollo profesional.")
+    "y disponen de escaso acceso a la capacitación y al crédito formal. En el plano "
+    "agregado, la informalidad erosiona la base tributaria del Estado y deprime la "
+    "productividad media, pues las unidades informales permanecen pequeñas y "
+    "descapitalizadas; la evidencia comparada muestra que en economías más formales, "
+    "como Chile, la productividad por trabajador casi duplica la peruana (Loayza, 2008; "
+    "Ulyssea, 2020). Ante la falta de empleo formal, amplios segmentos de la PEA "
+    "recurren a ocupaciones eventuales de subsistencia —los «cachuelos»—, que rara vez "
+    "ofrecen estabilidad ni desarrollo profesional.")
 
 # --- Factores socioeconómicos ---
 para(
@@ -287,11 +285,10 @@ para(
     "departamento de Lima alberga el **mayor volumen absoluto de trabajadores "
     "informales** del país, dado que concentra la mayor parte de la población ocupada "
     "nacional. A ello se suma que, según el INEI (2025), Lima y Callao figuraron entre "
-    "las ciudades donde la informalidad aumentó respecto de 2023, lo que sugiere un "
-    "posible estancamiento del proceso de formalización en la capital. Además, el "
-    "departamento comprende tanto la metrópoli moderna como provincias de carácter "
-    "rural y agrario, donde la informalidad es mucho mayor, de modo que el promedio "
-    "departamental enmascara realidades laborales profundamente desiguales.")
+    "las ciudades donde la informalidad aumentó respecto de 2023. Además, el departamento "
+    "comprende tanto la metrópoli moderna como provincias de carácter rural, donde la "
+    "informalidad es mucho mayor, de modo que el promedio departamental enmascara "
+    "realidades laborales profundamente desiguales.")
 
 # --- Vacíos / importancia / pertinencia / cierre ---
 para(
@@ -335,7 +332,8 @@ para(
     "limeño de 2024-2025 resulta indispensable para orientar políticas públicas "
     "eficaces, lo que conduce a la formulación del problema de investigación.")
 
-# --- Referencias ---
+# --- Referencias (en página aparte) ---
+doc.add_page_break()
 heading("Referencias", size=13)
 refs = [
     "Becker, G. S. (1964). //Human capital: A theoretical and empirical analysis//. "
