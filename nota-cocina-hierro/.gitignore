@@ -1,0 +1,6 @@
+# Artefactos generados
+build/img/*.png
+build/__pycache__/
+__pycache__/
+*.pyc
+*.pdf
