@@ -38,6 +38,8 @@ pf.space_after = Pt(0)
 pf.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
 
 for sec in doc.sections:
+    sec.page_width = Cm(21.0)     # A4
+    sec.page_height = Cm(29.7)    # A4
     sec.top_margin = Cm(2.54)
     sec.bottom_margin = Cm(2.54)
     sec.left_margin = Cm(2.54)
@@ -268,9 +270,14 @@ para(
     "registran tasas superiores a las de los hombres (73,1 % frente a 68,8 %), por la "
     "segregación ocupacional y la carga del trabajo de cuidado; y la informalidad es muy "
     "superior en el ámbito rural (94,6 %) respecto del urbano (65,1 %) (INEI, 2025; "
-    "CEPAL, 2023). Estos hallazgos sustentan la inclusión del nivel de ingresos, el "
-    "nivel educativo y los determinantes demográficos —edad, sexo y estado civil— como "
-    "variables explicativas centrales del presente estudio.")
+    "CEPAL, 2023). El estado civil, por su parte, también incide en la decisión de "
+    "informalidad: la literatura reporta que las personas con pareja o con "
+    "responsabilidades de jefatura del hogar presentan patrones de inserción laboral "
+    "diferenciados, asociados a una mayor necesidad de estabilidad de ingresos, por lo "
+    "que constituye un control demográfico pertinente. Estos hallazgos sustentan la "
+    "inclusión del nivel de ingresos, el nivel educativo y los determinantes "
+    "demográficos —edad, sexo y estado civil— como variables explicativas centrales del "
+    "presente estudio.")
 
 # --- Lima ---
 para(
@@ -285,8 +292,10 @@ para(
     "departamento de Lima alberga el **mayor volumen absoluto de trabajadores "
     "informales** del país, dado que concentra la mayor parte de la población ocupada "
     "nacional. A ello se suma que, según el INEI (2025), Lima y Callao figuraron entre "
-    "las ciudades donde la informalidad aumentó respecto de 2023. Además, el departamento "
-    "comprende tanto la metrópoli moderna como provincias de carácter rural, donde la "
+    "las ciudades donde la informalidad aumentó respecto de 2023, lo que sugiere un "
+    "posible estancamiento del proceso de formalización en la capital. Además, el "
+    "departamento comprende tanto la metrópoli moderna como provincias de carácter "
+    "rural, donde la "
     "informalidad es mucho mayor, de modo que el promedio departamental enmascara "
     "realidades laborales profundamente desiguales.")
 
@@ -323,6 +332,10 @@ para(
     "que la informalidad se mantiene elevada e incluso repuntó en la capital; y, por "
     "primera vez de manera consolidada, se dispone de la información de la Encuesta "
     "Permanente de Empleo Nacional, que permite un análisis más preciso y actualizado. "
+    "En particular, la disponibilidad de microdatos individuales habilita la estimación "
+    "de modelos de elección discreta —como los modelos logit y probit— que cuantifican "
+    "el efecto marginal de cada factor socioeconómico sobre la probabilidad de "
+    "informalidad, controlando por las demás características del trabajador. "
     "En síntesis, la informalidad laboral es un fenómeno estructural, global y "
     "persistente que en el departamento de Lima —pese a presentar las tasas relativas "
     "más bajas del país— afecta a la mayoría de los trabajadores y al mayor volumen "
