@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:794px; height:1123px; font-family:'Segoe UI', Arial, sans-serif; }
+  .page { width:794px; height:1123px; background:#ffffff; position:relative;
+          border:1px solid #e3e3e3; padding:30px 38px; }
+
+  /* Header gov bar */
+  .header { display:flex; align-items:center; gap:14px; padding-bottom:14px; }
+  .peru-flag { width:46px; height:30px; border-radius:3px; overflow:hidden; display:flex;
+               box-shadow:0 0 0 1px #ddd; }
+  .peru-flag span { flex:1; }
+  .peru-flag .red { background:#d51317; } .peru-flag .white { background:#fff; }
+  .header .min { font-size:12px; color:#444; line-height:1.25; }
+  .header .min b { color:#111; }
+
+  /* Gray band with title */
+  .band { background:#7f7f7f; padding:36px 34px; margin-top:6px; }
+  .band h1 { color:#fff; font-size:30px; letter-spacing:2px; font-weight:700; }
+  .band .rule { height:4px; width:165px; background:#cfd6dd; margin-top:12px; }
+
+  /* Photo / themed banner */
+  .photo { height:560px; margin:16px 0; border-radius:2px; position:relative; overflow:hidden;
+           background:linear-gradient(135deg,#1b3a5c 0%, #285d86 55%, #3a86b8 100%);
+           display:flex; align-items:center; justify-content:center; }
+  .photo .grid-overlay { position:absolute; inset:0;
+     background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),
+                      linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);
+     background-size:46px 46px; }
+  .icons { display:flex; gap:54px; align-items:center; z-index:2; }
+  .icon-excel { width:150px; height:150px; background:#1d6f42; border-radius:22px;
+     display:flex; align-items:center; justify-content:center; color:#fff; font-size:78px;
+     font-weight:800; box-shadow:0 14px 40px rgba(0,0,0,.35); font-family:Arial; }
+  .icon-ai { width:150px; height:150px; border-radius:22px; color:#fff;
+     background:linear-gradient(135deg,#7b2ff7,#9d4edd 60%,#5a189a);
+     display:flex; align-items:center; justify-content:center; font-size:60px; font-weight:800;
+     box-shadow:0 14px 40px rgba(0,0,0,.35); }
+  .photo .tag { position:absolute; bottom:14px; left:18px; color:rgba(255,255,255,.85);
+     font-size:13px; letter-spacing:.5px; z-index:2; }
+
+  /* Blue title band */
+  .titleband { background:#3a78b5; padding:26px 30px; }
+  .titleband p { color:#fff; font-size:19px; font-weight:700; line-height:1.4; }
+  .titleband .rule { height:4px; width:165px; background:#cfe0f0; margin-top:14px; }
+
+  /* Footer logos */
+  .footer { display:flex; justify-content:flex-end; align-items:center; gap:26px;
+            padding-top:22px; }
+  .logo-box { display:flex; align-items:center; gap:10px; }
+  .pf { width:40px; height:26px; border-radius:3px; overflow:hidden; display:flex; box-shadow:0 0 0 1px #ddd;}
+  .pf span{flex:1} .pf .red{background:#d51317} .pf .white{background:#fff}
+  .logo-text { font-weight:800; font-size:14px; color:#333; line-height:1.05; }
+  .pronabec { color:#0a3d6e; font-weight:800; font-size:26px; letter-spacing:1px; }
+  .pronabec small{ display:block; font-size:12px; color:#b8232f; font-weight:700; letter-spacing:3px;}
+  .b18 { background:#0a3d6e; color:#fff; font-weight:800; font-size:22px; padding:10px 16px;
+         border-radius:8px; letter-spacing:1px; }
+  .b18 em{ color:#f4b400; font-style:normal; }
+  .bottombar { height:30px; background:#9fc3e0; margin:18px -38px -34px -38px; }
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <div class="peru-flag"><span class="red"></span><span class="white"></span><span class="red"></span></div>
+      <div class="min"><b>PERÚ</b> &nbsp; Ministerio de Educación</div>
+    </div>
+
+    <div class="band">
+      <h1>NOTA METODOLÓGICA</h1>
+      <div class="rule"></div>
+    </div>
+
+    <div class="photo">
+      <div class="grid-overlay"></div>
+      <div class="icons">
+        <div class="icon-excel">X</div>
+        <div class="icon-ai">IA</div>
+      </div>
+      <div class="tag">Capacitación digital · Excel + Inteligencia Artificial</div>
+    </div>
+
+    <div class="titleband">
+      <p>Fortalecimiento de competencias en Excel e Inteligencia Artificial
+         para la empleabilidad en el marco de Beca 18</p>
+      <div class="rule"></div>
+    </div>
+
+    <div class="footer">
+      <div class="logo-box">
+        <div class="pf"><span class="red"></span><span class="white"></span><span class="red"></span></div>
+        <div class="pronabec">PRONABEC<small>BECA 18</small></div>
+      </div>
+      <div class="b18">BECA&nbsp;<em>18</em></div>
+    </div>
+    <div class="bottombar"></div>
+  </div>
+</body>
+</html>
