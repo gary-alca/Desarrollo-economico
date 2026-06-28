@@ -5,12 +5,22 @@ tesis *"Factores socioeconómicos que influyen en la informalidad laboral en el
 departamento de Lima en los años 2024-2025"* (Escuela Profesional de Economía,
 Universidad Nacional Mayor de San Marcos).
 
-## Entregable
+## Entregables
 
-- **`1.1_Planteamiento_del_Problema_Informalidad_Lima.docx`** — documento Word listo
-  para insertarse en la tesis. Formato: Times New Roman 12, interlineado 1.5, texto
-  justificado, márgenes 2.54 cm, 9 figuras insertadas (300 dpi) y referencias en
-  formato APA 7.
+- **`1.1_Planteamiento_del_Problema_6pag_graficos_oficiales.docx`** — **versión
+  solicitada (~6 páginas)**. Usa gráficos **oficiales tomados tal cual** (no de
+  elaboración propia): el esquema conceptual del INEI, la tasa de empleo informal
+  mundial de ILOSTAT/OIT (2004-2022) y la PEA ocupada formal/informal del INEI (2024).
+  Formato: Times New Roman 12, interlineado 1.5, texto justificado, márgenes 2.54 cm,
+  referencias en APA 7. Los gráficos oficiales están en `oficial_img/`.
+- **`1.1_Planteamiento_del_Problema_Informalidad_Lima.docx`** — versión extendida con
+  9 figuras de elaboración propia (300 dpi) construidas con datos oficiales.
+
+> Nota sobre las figuras oficiales: la política de red de esta sesión bloquea el acceso
+> directo a los portales oficiales (ilo.org, inei.gob.pe, cepal.org devuelven 403 en la
+> puerta de egreso), por lo que los gráficos oficiales se reprodujeron a partir de las
+> figuras que ya obran en el proyecto de tesis (ILOSTAT e INEI). Para incorporar otros
+> gráficos oficiales específicos, basta con adjuntar las imágenes y se insertan tal cual.
 
 ## Estructura del apartado
 
