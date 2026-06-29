@@ -15,6 +15,18 @@ Universidad Nacional Mayor de San Marcos).
   referencias en APA 7. Los gráficos oficiales están en `oficial_img/`.
 - **`1.1_Planteamiento_del_Problema_Informalidad_Lima.docx`** — versión extendida con
   9 figuras de elaboración propia (300 dpi) construidas con datos oficiales.
+- **`1.2.1_Justificacion_Teorica.docx`** — justificación teórica (~2 páginas): texto del
+  autor en negro y tres teorías añadidas en rojo (ingreso, desarrollo y capital
+  humano/demografía), con citas y referencias APA 7.
+- **`Capitulo_III_Metodologia_Informalidad_Lima.docx`** — **Capítulo III. Metodología
+  (~25 páginas, A4)**. Tipo aplicada/cuantitativa, diseño no experimental transversal,
+  población y muestra (ENAHO-INEI), operacionalización de variables, modelo **Logit/Probit**,
+  efectos marginales y razón de momios, validación (ROC, pseudo-R², VIF, Hosmer-Lemeshow),
+  contraste de hipótesis, robustez, limitaciones, ética y matriz de consistencia. Incluye
+  7 tablas y 16 ecuaciones. Sigue la ruta del artículo guía (Semestre Económico, 2025) y la
+  matriz del proyecto.
+  > El autor exacto del artículo guía debe confirmarse: los portales oficiales (Semestre
+  > Económico, SciELO, Dialnet) están bloqueados por la política de red de la sesión.
 
 > Nota sobre las figuras oficiales: la política de red de esta sesión bloquea el acceso
 > directo a los portales oficiales (ilo.org, inei.gob.pe, cepal.org devuelven 403 en la
