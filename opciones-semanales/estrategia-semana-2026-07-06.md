@@ -1,72 +1,95 @@
-# Estrategia semanal de opciones — Semana del 6 al 10 de julio de 2026
+# Qué opciones operar esta semana — Guía explicada paso a paso
+## Semana del 6 al 10 de julio de 2026
 
-> **Aviso**: Este documento es un análisis educativo, no asesoría financiera personalizada.
-> Los strikes y primas son aproximados (verificar la cadena de opciones en tiempo real antes de operar).
+> **Documento educativo.** No es asesoría financiera personalizada. Los precios (strikes) y primas son
+> aproximados: verifica la cadena de opciones real de tu bróker antes de operar.
 
-## 1. Contexto de mercado
+## Antes de empezar: diccionario rápido
 
-| Indicador | Lectura | Implicancia |
+- **Opción**: contrato que te da el DERECHO (no la obligación) de comprar o vender una acción a un precio fijo antes de una fecha. Pagas o cobras una "prima" por ese derecho.
+- **Call (opción de compra)**: derecho a COMPRAR la acción a un precio fijo. Ganas valor si la acción SUBE.
+- **Put (opción de venta)**: derecho a VENDER la acción a un precio fijo. Ganas valor si la acción BAJA.
+- **Strike (precio de ejercicio)**: el precio fijo pactado. "Put 90" = derecho a vender a $90.
+- **Prima**: el precio de la opción. El COMPRADOR la paga; el VENDEDOR la cobra y se la queda si la opción expira sin valor.
+- **Comprar vs. Vender una opción**: comprar = pagas prima, pérdida limitada a lo que pagaste. Vender = cobras prima por adelantado, apuestas a que NO ocurra el movimiento (ganancia limitada a la prima, riesgo mayor).
+- **Spread (diferencial)**: combinar dos opciones a la vez (una comprada, una vendida). Abarata la operación y PONE UN TOPE a la pérdida máxima. Es la versión "con red de seguridad".
+- **Vencimiento**: la fecha en que la opción muere. Si no sirve, vale cero.
+- **Volatilidad implícita (IV)**: el "nerviosismo" esperado. IV alta = opciones CARAS (bueno para el que vende). IV baja = opciones BARATAS (bueno para el que compra).
+- **VIX**: el "termómetro del miedo" del mercado general. Bajo (~16 hoy) = mercado tranquilo, opciones baratas.
+- **Earnings (resultados trimestrales)**: día en que una empresa publica sus cuentas. Antes sube la IV; justo después se desploma.
+- **IV crush**: la caída brusca de la volatilidad (y del precio de las opciones) justo DESPUÉS de un earnings. Perjudica al comprador, beneficia al vendedor.
+- **Theta (desgaste por tiempo)**: las opciones pierden valor cada día, como un hielo derritiéndose. Perjudica al comprador, beneficia al vendedor.
+
+## 1. Cómo está el mercado esta semana
+
+En pocas palabras: el mercado está en máximos y tranquilo (poco miedo). Dos consecuencias prácticas:
+
+1. **Las opciones están baratas en general** → cuando queramos apostar a una dirección, conviene COMPRAR prima barata en lugar de venderla.
+2. **La excepción son las empresas que reportan esta semana** (Delta y PepsiCo) → en ellas la volatilidad está inflada y ahí sí conviene VENDER prima cara.
+
+| Dato | Cómo está | Qué significa para nosotros |
 |---|---|---|
-| S&P 500 | 7,483 (+1.8% la semana pasada, zona de máximos) | Sesgo alcista, pero poco margen de error |
-| VIX | ~15.8 (banda media-baja 12–20) | Prima de opciones **barata**: favorece comprar direccional con riesgo definido; vender prima "desnuda" paga poco en índices |
-| Fed | Nuevo presidente Kevin Warsh, tono *hawkish* en Sintra. Minutas FOMC el **miércoles 8 de julio** | Único evento macro capaz de mover el mercado esta semana |
-| Probabilidad de recorte en septiembre | ~60–65% | Fondo de liquidez aún favorable a renta variable |
-| Temporada de resultados Q2 | Arranca esta semana: **PepsiCo (jue 9)**, **Delta (vie 10)**, Levi's | IV inflada solo en nombres puntuales → ahí sí conviene **vender** prima |
-| Rotación | Flujo hacia value/cíclicos; crecimiento de beneficios S&P estimado >24% | Los cíclicos (aerolíneas) tienen viento a favor |
-| Petróleo | A la baja tras el tratado interino EEUU–Irán | Beneficia directamente a aerolíneas (Delta: ~$300M de beneficio extra en refinería) |
+| S&P 500 (índice general de EE.UU.) | 7,483, en máximos (+1.8% la semana pasada) | Tendencia al alza, pero cara: poco margen para errores |
+| VIX (termómetro del miedo) | ~15.8, nivel bajo-normal | Opciones baratas: mejor comprar apuestas direccionales que venderlas |
+| Reserva Federal (banco central) | Publica sus "minutas" el miércoles 8 | Único evento capaz de sacudir el mercado esta semana |
+| Resultados trimestrales | PepsiCo (jue 9), Delta (vie 10) | Volatilidad inflada solo en estas: ahí conviene vender prima |
+| Petróleo | Cayendo (paz interina EE.UU.–Irán) | Muy bueno para aerolíneas como Delta (menos costo de combustible) |
 
-**Situación de los subyacentes candidatos:**
+## 2. Las 4 operaciones recomendadas (de mayor a menor confianza)
 
-- **AAPL ($308.6)**: fuerte momentum, a ~4% de superar a Nvidia como la empresa más valiosa del mundo. Sus earnings son a fin de mes (fuera de esta ventana).
-- **MSFT ($384)**: la peor del "Magnificent 7", −24% en el año, en mínimos desde 2023 por dudas sobre el capex en centros de datos. Michael Burry compró calls apostando a $700–750 en 2028. Pesimismo extremo ya en precio.
-- **NVDA**: sin catalizador propio hasta fines de agosto; rehén del sentimiento sobre IA, que está nervioso. Precio objetivo promedio de analistas $301 (+55%), pero sin gatillo esta semana.
-- **DAL (soporte técnico $92.7)**: reporta el viernes 10 antes de la apertura. 22 de 24 analistas en "Strong Buy", 4 trimestres seguidos superando estimaciones, combustible más barato. Consenso: EPS ~$1.43–1.54, ingresos ~$17.5B.
+### Idea 1 — Delta (DAL): apostar a que NO caerá mucho antes de sus resultados
 
-## 2. Las 4 operaciones recomendadas
+**Estrategia: Bull Put Spread** ("diferencial alcista con puts"). Cobras dinero hoy apostando a que la acción se mantiene por encima de cierto nivel, y compras una segunda opción como red de seguridad para que la pérdida nunca sea ilimitada.
 
-### Idea 1 — DAL: **Bull Put Spread** sobre earnings (la mejor relación riesgo/beneficio de la semana)
+- **Cómo se arma**: vendes una put strike 90 (cobras prima) y compras una put strike 85 (pagas menos prima). Vencimiento 10 o 17 de julio. Te quedas la diferencia si Delta cierra por encima de $90.
+- **Por qué tiene sentido**: cuatro razones apuntan a lo mismo. (a) Delta reporta el viernes con la volatilidad inflada, y justo después se desploma (IV crush), lo que abarata las opciones que vendimos y nos da ganancia. (b) El petróleo bajó por la paz EE.UU.–Irán, ahorrándole a Delta ~$300 millones. (c) 22 de 24 analistas la califican "compra fuerte" y ha superado previsiones 4 trimestres seguidos. (d) Tiene un soporte técnico en $92.7 (nivel donde los compradores suelen frenar caídas).
+- **El riesgo**: se espera que su ganancia por acción caiga ~32% frente al año pasado. Si da malas previsiones y rompe el soporte, perderías — pero la pérdida está TOPADA por el spread. Regla: cerrar al llevar 50–60% del máximo.
 
-- **Estructura**: vender put 90 / comprar put 85, vencimiento 10 o 17 de julio.
-- **Por qué esta estrategia**: la IV de DAL está inflada antes del reporte del viernes. El *IV crush* posterior al earnings trabaja a favor del vendedor de prima. El spread (y no la venta de put desnuda) define el riesgo máximo en $500 − crédito por contrato.
-- **Tesis**: combustible barato (tratado EEUU–Irán), historial de sorpresas positivas, rotación hacia cíclicos, soporte en $92.7 que da colchón adicional.
-- **Riesgo**: se espera una caída interanual del EPS de ~32%; si la guía decepciona y rompe el soporte, se asume la pérdida definida. Cerrar al 50–60% del crédito máximo si se alcanza antes del viernes.
+### Idea 2 — Microsoft (MSFT): cobrar por comprometerte a comprarla más barata
 
-### Idea 2 — MSFT: **Venta de Put** (cash-secured) o Bull Put Spread
+**Estrategia: Venta de Put** (cash-secured = con el dinero reservado para comprar si te toca). Te pagan hoy por prometer que comprarías Microsoft un poco más abajo del precio actual.
 
-- **Estructura**: vender put 370 (cash-secured) o spread 370/360, vencimiento 17 de julio — **antes** de sus earnings de fin de mes, para no exponerse al evento.
-- **Por qué esta estrategia**: tras −24%, la IV de MSFT está elevada respecto a su historia y el pesimismo parece capitulación (mínimos desde 2023 con Burry comprando calls). Vender el put te paga por comprometerte a comprar ~4% más abajo: si no llega, cobras la prima; si llega, entras con doble descuento.
-- **Riesgo**: el cuchillo puede seguir cayendo si el mercado sigue castigando el capex en IA. Solo con capital dispuesto a ser asignado (o usar el spread para definir riesgo).
+- **Cómo se arma**: vendes una put strike 370 y reservas el efectivo por si te asignan las acciones. Alternativa con red: spread 370/360. Vencimiento 17 de julio, ANTES de sus resultados de fin de mes.
+- **Por qué tiene sentido**: Microsoft es la peor de las grandes tecnológicas: ha caído 24% y está en mínimos desde 2023 por miedo a que gaste demasiado en centros de datos para IA. Cuando todos ya están pesimistas, el precio suele estar cerca de un suelo ("capitulación"). Señal reveladora: el famoso inversor Michael Burry compró calls apostando a que subirá a $700+. Al vender la put, si NO baja te quedas la prima; y si baja, compras una empresa sólida con doble descuento.
+- **El riesgo**: si el mercado sigue castigando el gasto en IA, podría seguir cayendo. Hazlo solo con dinero que estés dispuesto a usar para comprar la acción, o usa el spread para limitar la pérdida.
 
-### Idea 3 — AAPL: **Bull Call Spread**
+### Idea 3 — Apple (AAPL): apostar a una subida moderada, barato
 
-- **Estructura**: comprar call 310 / vender call 322.5, vencimiento 17 o 24 de julio (evitando earnings).
-- **Por qué esta estrategia**: con VIX en 15.8 el débito es razonable, y el spread reduce el costo frente a la compra de call seca (la call vendida financia parte de la prima y neutraliza theta). El catalizador narrativo — destronar a Nvidia como la más valiosa — puede atraer flujo pasivo/momentum esta misma semana.
-- **Riesgo**: el rally está extendido; pérdida máxima = débito pagado (~1/3 del ancho del spread). No usar compra de call simple: pagarías theta completa en una semana sin evento propio.
+**Estrategia: Bull Call Spread** ("diferencial alcista con calls"). Apuestas a que sube, pero abaratas la apuesta vendiendo otra opción más arriba.
 
-### Idea 4 — SPY: **Butterfly de calls** (o Put protector si ya tienes cartera)
+- **Cómo se arma**: compras una call strike 310 (apuestas a que sube) y vendes una call strike 322.5 (esa venta devuelve dinero y reduce el costo). Vencimiento 17 o 24 de julio, evitando sus earnings.
+- **Por qué tiene sentido**: Apple ($308.6) está a solo ~4% de ser la empresa más valiosa del mundo, superando a Nvidia. Ese titular atrae compradores y fondos que siguen la tendencia, y puede empujarla esta misma semana. Elegimos el SPREAD y no la call sola porque, en una semana sin noticias propias de Apple, una call sola perdería valor cada día por el desgaste del tiempo (theta); la call vendida compensa ese desgaste.
+- **El riesgo**: la subida ya viene muy estirada; si se frena, pierdes lo que pagaste (nada más, está topado). Salir si Apple pierde los ~$300.
 
-- **Estructura**: mariposa 745/755/765 calls, vencimiento 10 de julio.
-- **Por qué esta estrategia**: semana de pocos datos (lo relevante llega el miércoles con las minutas), mercado en máximos con deriva lenta al alza y volatilidad realizada baja — el escenario ideal para una mariposa: costo mínimo, pago máximo si el índice "se estaciona" cerca del cuerpo.
-- **Alternativa defensiva**: si tienes cartera larga, la **Compra de Put** OTM de SPY está históricamente barata con VIX <16 — es el momento de comprar seguro, no de venderlo. Unas minutas más hawkish de lo esperado de Warsh son el riesgo de cola de la semana.
+### Idea 4 — El índice SPY: cobrar si el mercado se queda quieto, o comprar un seguro barato
+
+**Estrategia principal: Butterfly ("mariposa") de calls.** Una apuesta barata a que el índice termina la semana cerca de un nivel concreto, sin moverse mucho.
+
+- **Cómo se arma**: mariposa 745/755/765 en calls, vencimiento 10 de julio. Cuesta poco y paga mucho si el índice se "estaciona" cerca de 755.
+- **Por qué tiene sentido**: semana con pocos datos (lo único fuerte son las minutas de la Fed el miércoles) y mercado que sube despacio y sin sobresaltos. Ese ambiente de "poco movimiento" es donde una mariposa rinde mejor: arriesgas poco para ganar bastante si el índice no se dispara ni se hunde.
+- **Alternativa defensiva (si ya tienes acciones)**: comprar una Put de SPY como SEGURO. Con el miedo tan bajo (VIX <16), ese seguro está barato — es el mejor momento para comprar protección, no para venderla. El único susto posible sería que las minutas de la Fed salgan más duras de lo esperado.
 
 ## 3. Estrategias del listado que NO conviene usar esta semana
 
-| Estrategia | Por qué no |
-|---|---|
-| **Straddle / Strangle largos** (sobre earnings) | El IV crush post-reporte destruye la prima aunque aciertes dirección; con VIX 15.8 tampoco hay expectativa de movimiento explosivo en índices |
-| **Strip / Strap** | Exigen expectativa de movimiento violento con sesgo direccional; nada en el calendario lo justifica |
-| **Box Spread** | Es arbitraje de tasas; tras comisiones y horquillas, el retail no captura valor |
-| **Venta de Call desnuda** (NVDA/AAPL) | Riesgo ilimitado contra un mercado en máximos con momentum; si quieres sesgo bajista, usa Bear Call Spread |
-| **Bear Put / Bear Call Spreads** en índices | Luchar contra la tendencia primaria alcista sin catalizador bajista confirmado es pagar por tener razón "algún día" |
+| Estrategia | Qué es (en simple) | Por qué NO esta semana |
+|---|---|---|
+| Compra de Call / Put (solas) | Apuesta directa a que sube (call) o baja (put) | Pierden valor cada día por el desgaste del tiempo; sin catalizador claro es tirar prima. Mejor dentro de un spread |
+| Venta de Call desnuda | Cobrar prima apostando a que NO sube, sin red | Riesgo ILIMITADO si la acción se dispara, y el mercado está en máximos con impulso |
+| Straddle / Strangle | Comprar call y put a la vez, apostando a un movimiento fuerte en cualquier dirección | Con el mercado tranquilo (VIX 16) no se espera ese movimiento; tras earnings el IV crush destruye la prima aunque aciertes |
+| Strip / Strap | Variantes del straddle con más peso a un lado | Necesitan un movimiento violento con dirección; nada en el calendario lo justifica |
+| Box Spread | Combinación que en teoría "asegura" un rendimiento fijo | Es arbitraje de tasas; tras comisiones, el inversor particular no saca ventaja |
+| Bear Call / Bear Put Spread | Apuestas a que el mercado BAJA, con riesgo limitado | La tendencia general es alcista; apostar a la baja sin razón concreta es remar contra la corriente |
 
-## 4. Reglas de gestión
+**Nota**: los "Bull Put Spread" y "Bull Call Spread" SÍ los usamos (ideas 1 y 3), y el "Butterfly" también (idea 4). Solo descartamos los que no encajan con el mercado de esta semana.
 
-1. No arriesgar más de 1–2% del capital por idea.
-2. En los spreads de crédito (DAL, MSFT), tomar ganancias al 50–60% del crédito máximo.
-3. En el Bull Call Spread de AAPL, salir si el subyacente pierde ~$300 (invalidación técnica del momentum).
-4. Revisar las minutas del FOMC del miércoles 8: si el tono es más hawkish de lo esperado, reducir exposición direccional alcista.
+## 4. Reglas para no equivocarse
 
-## Fuentes
+1. No arriesgar más del 1–2% de tu capital total en cada idea.
+2. En las operaciones donde cobras prima (Delta y Microsoft): cerrar y llevarte la ganancia al alcanzar el 50–60% del máximo posible. No ser codicioso.
+3. En Apple: salir si el precio pierde los ~$300 (señal de que la subida se rompió).
+4. Mirar las minutas de la Fed el miércoles 8: si el tono es más duro de lo esperado, reducir las apuestas alcistas.
+
+## Fuentes consultadas
 
 - [Charles Schwab — Weekly Trader's Outlook](https://www.schwab.com/learn/story/weekly-traders-outlook)
 - [Tradingkey — US Stock Market This Week 2026-07-06](https://www.tradingkey.com/tools/market-update/us-stock-market-this-week-20260706)
