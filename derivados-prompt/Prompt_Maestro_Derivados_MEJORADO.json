@@ -1,0 +1,301 @@
+{
+  "prompt_id": "prompt_maestro_derivados_mejorado_v2",
+  "titulo": "Proyecto de Derivados Financieros — Portafolio USD 1,000,000 en Futuros y Opciones",
+  "horizonte": "2026-06-18 a 2026-07-09",
+  "rol_asignado": "Actúa como gestor profesional de portafolios, analista cuantitativo y especialista en derivados financieros (Futuros y Opciones), con experiencia en mercados internacionales, gestión de riesgos, macroeconomía y elaboración de informes académicos universitarios. Entrega un trabajo bien fundamentado, con razonamiento financiero profundo y decisiones justificadas, redactado a nivel universitario. No entregues respuestas superficiales.",
+  "contexto_proyecto": {
+    "capital_objetivo_usd": 1000000,
+    "instrumentos": ["futuros", "opciones"],
+    "objetivo": "Demostrar dominio del uso de derivados, administración del riesgo y toma de decisiones fundamentadas; no solo maximizar rentabilidad.",
+    "portafolio_dinamico": true,
+    "nota": "El portafolio NO es estático: se administra día a día conforme cambian las condiciones del mercado."
+  },
+  "cronograma_real": {
+    "descripcion": "Tres tramos que NO se deben mezclar. Respetar qué instrumento y qué fuente de precios corresponde a cada tramo.",
+    "tramos": [
+      {
+        "id": "A",
+        "nombre": "Análisis retrospectivo (hindsight)",
+        "fechas": "2026-06-18 a 2026-06-24",
+        "instrumentos_permitidos": ["futuros"],
+        "fuente_precios": "Liquidaciones diarias reales (CME, ICE, NYMEX, COMEX)",
+        "naturaleza": "Reconstrucción ilustrativa con datos ya conocidos; NO son decisiones en tiempo real."
+      },
+      {
+        "id": "B",
+        "nombre": "Apertura de opciones",
+        "fechas": "2026-06-25",
+        "instrumentos_permitidos": ["opciones", "futuros_que_siguen_corriendo"],
+        "fuente_precios": "Cadenas de opciones de las fotos adjuntas (snapshot del 25 de junio)",
+        "naturaleza": "Precio de entrada / prima pagada o cobrada."
+      },
+      {
+        "id": "C",
+        "nombre": "Administración en tiempo real",
+        "fechas": "2026-07-02 a 2026-07-09",
+        "instrumentos_permitidos": ["opciones_valoracion_y_cierre", "futuros_se_sigue_operando"],
+        "fuente_precios": "MarketWatch (precios reales del 2 al 9 de julio)",
+        "naturaleza": "Decisiones reales bajo incertidumbre."
+      }
+    ],
+    "reglas_duras": [
+      "Las opciones se abren el 25 de junio de 2026 usando exclusivamente los precios/primas de las fotos de cadenas de opciones adjuntas.",
+      "Del 2 al 9 de julio, la valoración, seguimiento y cierre de opciones se hace con precios reales de MarketWatch por strike/vencimiento.",
+      "Si un dato de MarketWatch falta, declararlo y usar estimación razonable justificada (interpolación por moneyness o paridad put-call); nunca inventar.",
+      "Los futuros se siguen operando durante todo el horizonte (no se congelan el 25 de junio); su marca a mercado diaria continúa hasta el 9 de julio.",
+      "El tramo retrospectivo A usa solo futuros porque sus liquidaciones históricas son verificables; las primas intradía pasadas de opciones no se pueden reconstruir de forma fiable."
+    ]
+  },
+  "bitacora_administracion_dinamica": {
+    "obligatorio": true,
+    "descripcion": "Narrar y justificar, con formato de bitácora fechada, qué se hizo con cada posición en cada momento relevante (línea de tiempo de decisiones, no una foto única). Cada decisión anclada a un dato de mercado real de esa fecha.",
+    "acciones_a_documentar": {
+      "ABRIR": "Activo, estrategia, fecha, precio/prima de entrada y por qué se abrió ese día.",
+      "MANTENER": "Por qué la tesis sigue vigente y qué indicadores lo confirman.",
+      "CERRAR": "Fecha y precio de cierre, resultado realizado (ganancia/pérdida) y por qué se cerró (objetivo 50-60% del máximo, ruptura de soporte, cambio de tesis).",
+      "REDUCIR_AUMENTAR_REEMPLAZAR": "Cuánto, por qué y con qué nueva estructura."
+    },
+    "regla_de_oro": "No mantengas una posición solo porque estaba en el plan original; si la tesis dejó de tener sentido, ciérrala o reemplázala y explica el motivo."
+  },
+  "activos_opciones_disponibles": {
+    "fuente": "Cadenas de opciones adjuntas (calls y puts con LAST, CHG, BID, ASK, VOL, OPEN INT. por strike). Usar como entrada del 25 de junio; valorar con MarketWatch del 2 al 9 de julio.",
+    "subyacentes": [
+      {"ticker": "AAPL", "nombre": "Apple", "current_price_entrada_25jun": 275.15},
+      {"ticker": "MSFT", "nombre": "Microsoft", "current_price_entrada_25jun": 352.83},
+      {"ticker": "NVDA", "nombre": "Nvidia", "current_price_entrada_25jun": null},
+      {"ticker": "DAL", "nombre": "Delta Air Lines", "vencimiento": "julio"},
+      {"ticker": "SPY", "nombre": "S&P 500 ETF", "vencimientos": ["julio", "diciembre"]}
+    ],
+    "nota_precios": "Si el current price de una foto de julio (AAPL ~308, MSFT ~390) difiere del de entrada del 25 de junio, es esperado: la foto del 25 de junio marca la ENTRADA y la de julio/MarketWatch marca la VALORACIÓN. Dejar explícito qué precio corresponde a qué fecha."
+  },
+  "ideas_opciones_recomendadas": {
+    "instruccion": "Partir de estas ideas como semilla; validarlas con datos reales de las cadenas y MarketWatch, ajustar strikes/vencimientos y justificar con el marco completo de preguntas. Si alguna deja de tener sentido con precios reales, decirlo y proponer alternativa.",
+    "ideas": [
+      {
+        "orden": 1,
+        "confianza": "alta",
+        "subyacente": "DAL",
+        "estrategia": "Bull Put Spread",
+        "construccion": "Vender put strike 90 (cobrar prima) y comprar put strike 85 (red de seguridad). Vencimiento 10 o 17 de julio.",
+        "tesis": "Reporta el viernes con volatilidad inflada -> IV crush posterior abarata las opciones vendidas; petróleo a la baja por distensión EE.UU.-Irán (-USD 300 M de costo de combustible); 22 de 24 analistas en compra fuerte y 4 sorpresas positivas seguidas; soporte técnico en ~92.7.",
+        "riesgo": "BPA esperado cae ~32% interanual; si da mala guía y rompe soporte, pierde, pero la pérdida está topada por el spread.",
+        "regla_salida": "Cerrar al 50-60% del máximo."
+      },
+      {
+        "orden": 2,
+        "confianza": "media-alta",
+        "subyacente": "MSFT",
+        "estrategia": "Venta de Put cash-secured (alternativa: spread 370/360)",
+        "construccion": "Vender put strike 370 con efectivo reservado para asignación; alternativa con red: spread 370/360. Vencimiento 17 de julio, antes de earnings de fin de mes.",
+        "tesis": "MSFT es la más castigada de las grandes tecnológicas (-24%, mínimos desde 2023 por miedo al gasto en centros de datos de IA) -> posible capitulación/suelo; señal: Michael Burry compró calls apostando a +700.",
+        "riesgo": "Agarrar un cuchillo que cae; usar solo capital dispuesto a comprar la acción, o el spread para topar la pérdida."
+      },
+      {
+        "orden": 3,
+        "confianza": "media",
+        "subyacente": "AAPL",
+        "estrategia": "Bull Call Spread",
+        "construccion": "Comprar call strike 310 y vender call strike 322.5. Vencimiento 17 o 24 de julio, evitando earnings.",
+        "tesis": "AAPL a ~4% de ser la empresa más valiosa del mundo (superar a Nvidia) -> titular que atrae compradores y fondos de tendencia; se usa spread y no call simple para que la call vendida compense el desgaste por theta en semana sin catalizadores propios.",
+        "riesgo": "Subida ya muy estirada; pérdida topada a lo pagado.",
+        "regla_salida": "Salir si AAPL pierde los ~300."
+      },
+      {
+        "orden": 4,
+        "confianza": "media",
+        "subyacente": "SPY",
+        "estrategia": "Butterfly de calls (con alternativa defensiva)",
+        "construccion": "Mariposa 745/755/765 en calls, vencimiento 10 de julio.",
+        "tesis": "Semana de pocos datos (solo minutas de la Fed el miércoles), mercado que sube despacio -> entorno ideal para una mariposa.",
+        "alternativa_defensiva": "Si ya hay acciones, comprar una put de SPY como seguro aprovechando VIX bajo (<16) -> protección barata.",
+        "riesgo": "Minutas de la Fed más duras de lo esperado."
+      },
+      {
+        "orden": 5,
+        "confianza": "a_evaluar",
+        "subyacente": "NVDA",
+        "estrategia": "Sesgo bajista (elegir entre Bear Call Spread, Compra de Put o Bear Put Spread)",
+        "tesis": "La caída por la incursión de Meta en la nube hizo que el mercado interprete exceso de capacidad de IA no utilizada (sobre-stock de GPUs), lo que reduciría el consumo/compra de GPUs y presionaría los ingresos de Nvidia.",
+        "seleccion_por_volatilidad": {
+          "IV_cara": "Priorizar estructuras que vendan prima (Bear Call Spread).",
+          "IV_barata": "La compra de put es más eficiente."
+        },
+        "opciones_a_comparar": [
+          "Bear Call Spread: vender call cercana, comprar call más arriba -> cobra prima con pérdida topada si NVDA rebota.",
+          "Compra de Put o Bear Put Spread: si se espera caída más marcada y controlada en costo."
+        ]
+      }
+    ]
+  },
+  "analisis_entorno_previo": {
+    "instruccion": "Análisis completo con información real y actualizada (buscar e indicar fuentes). No inventar.",
+    "variables_minimas": [
+      "economía global", "economía de EE.UU.", "política monetaria", "inflación",
+      "tasas de interés", "rendimientos de bonos del Tesoro", "situación de la Reserva Federal",
+      "fortaleza del dólar", "mercados bursátiles", "volatilidad (VIX)", "precio del petróleo",
+      "precio del oro", "riesgos geopolíticos", "eventos programados 18 jun - 9 jul",
+      "calendario económico", "noticias relevantes"
+    ]
+  },
+  "seleccion_activos": {
+    "mercados": ["CME", "ICE", "CBOE", "NYMEX", "COMEX"],
+    "opciones": ["AAPL", "MSFT", "NVDA", "DAL", "SPY"],
+    "futuros": "Ver bloque 'futuros'."
+  },
+  "futuros": {
+    "obligatorios": [
+      {"activo": "Oro", "simbolo": "GC", "mercado": "COMEX"},
+      {"activo": "Petróleo WTI", "simbolo": "CL", "mercado": "NYMEX"}
+    ],
+    "sugerir_al_menos_uno_adicional": true,
+    "candidatos_adicionales": [
+      {"activo": "Gas natural", "simbolo": "NG", "mercado": "NYMEX", "nota": "Alta volatilidad estacional."},
+      {"activo": "Plata", "simbolo": "SI", "mercado": "COMEX", "nota": "Beta alto al oro, más volátil."},
+      {"activo": "E-mini S&P 500", "simbolo": "ES", "mercado": "CME", "nota": "Exposición direccional al mercado."},
+      {"activo": "Nota del Tesoro 10 años", "simbolo": "ZN", "mercado": "CBOT", "nota": "Jugar el discurso de la Fed y las tasas."},
+      {"activo": "Maíz", "simbolo": "ZC", "mercado": "CBOT", "nota": "Sensible a clima y geopolítica."},
+      {"activo": "Trigo", "simbolo": "ZW", "mercado": "CBOT", "nota": "Sensible a clima y geopolítica."},
+      {"activo": "EUR/USD", "simbolo": "6E", "mercado": "CME", "nota": "Operar fortaleza/debilidad del dólar."}
+    ],
+    "datos_requeridos_por_futuro": [
+      "posición (larga/corta)", "tesis macro", "tamaño de contrato", "número de contratos",
+      "valor nocional", "margen inicial", "margen de mantenimiento"
+    ],
+    "guia_direccional": "Oro como refugio ante riesgo geopolítico; petróleo a la baja por distensión EE.UU.-Irán; tasas según el tono de las minutas de la Fed."
+  },
+  "entregables_excel": {
+    "obligatorio": true,
+    "formato_salida": "Archivos .xlsx reales con fórmulas y/o tablas Markdown pegables en Excel. Prioridad: que fórmulas y totales cuadren.",
+    "A_opciones_formato_ejercicio7": {
+      "descripcion": "Una tabla por estrategia, replicando el formato del Ejercicio 7.",
+      "bloque_parametros": ["Estrategia", "Tipo (long/short call/put, spread, butterfly)", "Contratos", "Acciones por contrato (100)", "Total de acciones", "Prima por acción", "Inversión/Crédito total", "r", "T (años)", "Strike(s)"],
+      "columnas_tabla_payoff": ["ST", "K", "PRIMA", "EJERCE (SI/NO)", "MONEYNESS (ITM/ATM/OTM)", "PAYOFF", "G o P x acción", "G o P total"],
+      "requisitos": [
+        "Barrer un rango de ST alrededor del strike.",
+        "Para spreads y butterfly, combinar patas: columnas por pata más PAYOFF neto y G o P total neto de la estructura.",
+        "Marcar break-even, pérdida máxima y ganancia máxima de cada estrategia.",
+        "Incluir fila/resumen con el resultado real según precio de MarketWatch al cierre/vencimiento (2-9 jul)."
+      ]
+    },
+    "B_futuros_formato_marca_a_mercado": {
+      "descripcion": "Una tabla por futuro, replicando el ejercicio del futuro de trigo (mark-to-market con cuenta de margen).",
+      "bloque_parametros": ["Activo", "Mercado", "Posición (larga/corta)", "N.º de contratos", "Tamaño de contrato", "Tamaño del portafolio (unidades)", "Margen inicial (por contrato y total)", "Margen de mantenimiento (por contrato y total)", "Precio negociado de entrada"],
+      "columnas_tabla_diaria": ["Fecha", "Día", "Precio negociado", "Precio de liquidación", "G o P por unidad", "G o P total diaria", "G o P acumulada", "Cuenta de Margen", "Margin Call"],
+      "requisitos": [
+        "La Cuenta de Margen parte del margen inicial y se actualiza cada día con la G o P diaria.",
+        "Cuando la cuenta caiga por debajo del margen de mantenimiento, disparar Margin Call y reponer hasta el margen inicial.",
+        "El signo de la G o P depende de la posición (larga gana si sube; corta gana si baja).",
+        "Usar precios de liquidación reales de cada día (declarar la fuente)."
+      ]
+    }
+  },
+  "construccion_portafolio_principal": {
+    "capital_objetivo_usd": 1000000,
+    "datos_por_posicion": [
+      "activo subyacente", "tipo de derivado", "estrategia", "posición larga/corta", "mercado",
+      "fecha de apertura", "fecha de vencimiento", "precio de entrada", "strike (si aplica)",
+      "prima pagada o recibida", "cantidad de contratos", "valor nocional", "peso en el portafolio"
+    ]
+  },
+  "analisis_retrospectivo": {
+    "fechas": "2026-06-18 a 2026-06-24",
+    "seccion_separada_y_etiquetada": true,
+    "reglas": [
+      "Solo futuros (no opciones), por verificabilidad de liquidaciones diarias (CME, ICE, NYMEX, COMEX).",
+      "Se pueden usar varias estrategias de futuros (largo en índice, corto en materia prima, uno sobre tasas o el dólar), cada una justificada con contexto macro real de esas fechas.",
+      "Cada posición declara: activo, mercado, fecha de apertura y cierre, precio de entrada y salida reales, resultado y fundamento macro disponible en esas fechas (no información posterior).",
+      "Nota metodológica obligatoria al inicio y al final: reconstrucción con datos ya conocidos (hindsight), ilustrativa, que NO representa decisiones en tiempo real. La condición de tiempo real bajo incertidumbre aplica solo al 2-9 de julio.",
+      "No mezclar con el portafolio principal ni con la administración dinámica semanal."
+    ]
+  },
+  "justificacion_por_posicion": {
+    "preguntas_obligatorias": [
+      "¿Por qué este activo?", "¿Por qué esta estrategia?", "¿Qué esperas que ocurra?",
+      "¿Qué riesgo intentas aprovechar?", "¿Qué escenario da ganancia?", "¿Qué escenario da pérdida?",
+      "¿Pérdida máxima?", "¿Ganancia potencial?", "¿Qué eventos la favorecen?",
+      "¿Qué eventos la perjudican?", "¿Por qué no otra estrategia?", "¿Ventajas?", "¿Desventajas?"
+    ]
+  },
+  "analisis_del_portafolio": [
+    "nivel de riesgo", "diversificación", "exposición sectorial", "exposición por tipo de activo",
+    "exposición direccional", "coberturas existentes", "relación riesgo-retorno",
+    "cómo interactúan las posiciones entre sí"
+  ],
+  "tablas": {
+    "separar_principal_de_retrospectivo": true,
+    "tabla_posiciones_columnas": ["Activo", "Derivado", "Estrategia", "Posición", "Precio", "Strike", "Prima", "Contratos", "Valor nocional", "Peso"],
+    "tablas_adicionales": ["distribución por sectores", "distribución por activos", "distribución por estrategias", "distribución por nivel de riesgo"]
+  },
+  "escenarios": {
+    "tipos": ["optimista", "base", "pesimista"],
+    "por_escenario": ["resultado por posición", "resultado del portafolio", "rentabilidad", "explicación económica"]
+  },
+  "gestion_del_riesgo": {
+    "riesgos": ["mercado", "volatilidad", "liquidez", "apalancamiento", "concentración"],
+    "sensibilidad": "aproximada del portafolio",
+    "griegas": "Explicar Delta, Gamma, Theta, Vega y Rho de forma conceptual o aproximada (p. ej., el bull put spread de DAL se beneficia del IV crush = Vega corta; el bull call spread de AAPL sufre theta y por eso se usa spread)."
+  },
+  "plan_monitoreo_diario": {
+    "fechas": "2026-07-02 a 2026-07-09",
+    "checklist": [
+      "noticias económicas", "calendario económico", "Fed", "inflación", "empleo", "PIB", "PMI",
+      "bonos", "VIX", "S&P 500", "Nasdaq", "Dow Jones", "petróleo", "oro", "dólar",
+      "volatilidad implícita", "volumen", "eventos geopolíticos"
+    ],
+    "requisito": "Explicar por qué cada variable importa para las posiciones concretas del portafolio."
+  },
+  "reglas_de_decision": {
+    "formato": "SI (evento) ENTONCES (acción)",
+    "eventos_a_cubrir": [
+      "sube/baja la volatilidad", "S&P 500 rompe resistencia/soporte", "petróleo supera cierto nivel",
+      "cae el oro", "dólar se fortalece", "cambian rendimientos de bonos", "Fed cambia el discurso",
+      "inflación o empleo sorprenden", "evento geopolítico"
+    ],
+    "acciones_posibles": ["abrir", "mantener", "reducir", "aumentar", "cerrar", "reemplazar"]
+  },
+  "estrategias_alternativas": {
+    "instruccion": "Si una hipótesis deja de cumplirse, proponer alternativas usando solo herramientas vistas en clase y justificar el cambio.",
+    "herramientas_permitidas": [
+      "Compra de Call", "Venta de Call", "Compra de Put", "Venta de Put",
+      "Bull Call Spread", "Bear Call Spread", "Bull Put Spread", "Bear Put Spread",
+      "Box Spread", "Butterfly Spread", "Straddle", "Strangle", "Strip", "Strap",
+      "Futuros largos", "Futuros cortos"
+    ]
+  },
+  "forma_de_trabajo": {
+    "descripcion": "Durante el 2-9 jul el usuario volverá a consultar varias veces. Cada vez actuar como gestor: reanalizar el mercado con información actualizada, comparar con la hipótesis original y responder claramente.",
+    "respuestas_posibles": ["Mantener", "Cerrar", "Reducir", "Aumentar", "Reemplazar"],
+    "regla": "No mantener una posición solo porque estaba en el plan; siempre explicar el porqué."
+  },
+  "estructura_informe_final": [
+    "1. Introducción (con nota metodológica del cronograma)",
+    "2. Objetivos",
+    "3. Metodología",
+    "4. Contexto macroeconómico",
+    "5. Contexto financiero",
+    "6. Análisis Retrospectivo (18-24 jun, solo futuros, con nota de hindsight)",
+    "7. Justificación de los activos seleccionados (portafolio principal)",
+    "8. Construcción del portafolio (apertura 25 jun; administración 2-9 jul)",
+    "9. Justificación individual de cada posición",
+    "10. Bitácora de administración dinámica (abrir/mantener/cerrar día a día)",
+    "11. Estrategia general del portafolio",
+    "12. Gestión del riesgo (incluye griegas)",
+    "13. Escenarios (optimista/base/pesimista)",
+    "14. Plan de monitoreo diario",
+    "15. Reglas para modificar el portafolio",
+    "16. Estrategias alternativas",
+    "17. Entregables Excel: (A) Opciones formato Ejercicio 7 · (B) Futuros formato marca a mercado con cuenta de margen",
+    "18. Conclusiones",
+    "19. Referencias"
+  ],
+  "reglas_importantes": [
+    "Usar información real y actualizada; si se necesita buscar, hacerlo e indicar fuentes.",
+    "No inventar precios, primas, volatilidades ni datos de mercado. Si falta un dato, decirlo y usar estimación razonable explicando el supuesto (interpolación por moneyness, paridad put-call).",
+    "Respetar el cronograma: opciones desde 25 jun con las fotos; valoración 2-9 jul con MarketWatch; futuros operando todo el horizonte; retrospectivo 18-24 jun solo futuros.",
+    "Justificar todas las decisiones con fundamentos financieros, macro y de mercado, paso a paso.",
+    "Si hay varias estrategias viables, compararlas antes de elegir y explicar por qué se descartaron las demás.",
+    "Priorizar la gestión del riesgo y la calidad del análisis sobre maximizar rentabilidad.",
+    "Verificar que cada operación sea coherente con el horizonte, el capital (~USD 1,000,000) y el perfil del portafolio.",
+    "Entregar los dos Excel con las estructuras indicadas y con los totales cuadrados."
+  ]
+}
