@@ -131,7 +131,7 @@ Para **cada estrategia de opciones** replica el formato del Ejercicio 7. Encabez
 
 **Tabla de resultados por precio spot al vencimiento (una fila por ST):**
 
-| ST | K | PRIMA | EJERCE (SI/NO) | MONEYNESS (ITM/ATM/OTM) | PAYOFF | G o P x acción | G o P total |
+| ST (Spot) | K | PRIMA | EJERCE (SI/NO) | MONEYNESS (ITM/ATM/OTM) | PAYOFF | G o P x acción | G o P total |
 |----|---|-------|----------------|--------------------------|--------|----------------|-------------|
 
 - Barre un rango de **ST** alrededor del strike (como en el Ejercicio 7).

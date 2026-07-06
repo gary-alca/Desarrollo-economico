@@ -169,7 +169,7 @@
     "A_opciones_formato_ejercicio7": {
       "descripcion": "Una tabla por estrategia, replicando el formato del Ejercicio 7.",
       "bloque_parametros": ["Estrategia", "Tipo (long/short call/put, spread, butterfly)", "Contratos", "Acciones por contrato (100)", "Total de acciones", "Prima por acción", "Inversión/Crédito total", "r", "T (años)", "Strike(s)"],
-      "columnas_tabla_payoff": ["ST", "K", "PRIMA", "EJERCE (SI/NO)", "MONEYNESS (ITM/ATM/OTM)", "PAYOFF", "G o P x acción", "G o P total"],
+      "columnas_tabla_payoff": ["ST (Spot)", "K", "PRIMA", "EJERCE (SI/NO)", "MONEYNESS (ITM/ATM/OTM)", "PAYOFF", "G o P x acción", "G o P total"],
       "requisitos": [
         "Barrer un rango de ST alrededor del strike.",
         "Para spreads y butterfly, combinar patas: columnas por pata más PAYOFF neto y G o P total neto de la estructura.",
